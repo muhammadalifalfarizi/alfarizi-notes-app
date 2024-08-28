@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import NotesItem from './NotesItem';
  
 // eslint-disable-next-line react/prop-types
@@ -22,7 +23,10 @@ function NotesList({ notes, onDelete }) {
         )
      }
    </div>
- );
+ ); 
 }
- 
+NotesList.propTypes = {
+  notes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
 export default NotesList;

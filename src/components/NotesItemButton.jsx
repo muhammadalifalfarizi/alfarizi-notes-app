@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
  
 // eslint-disable-next-line react/prop-types
 function NotesItemButton({ id, onDelete }) {
@@ -8,5 +9,9 @@ function NotesItemButton({ id, onDelete }) {
     </div>
   ) 
   
+}
+NotesItemButton.propTypes = {
+  id : PropTypes.number.isRequired,
+  onDelete : PropTypes.func.isRequired,
 }
 export default NotesItemButton;

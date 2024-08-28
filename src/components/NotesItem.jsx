@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import NotesItemContent from './NotesItemContent';
 import NotesItemButton from './NotesItemButton';
  
@@ -11,5 +13,13 @@ function NotesItem({ title, body, createdAt, id, onDelete }) {
    </div>
  );
 }
- 
+
+NotesItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
+
 export default NotesItem;
