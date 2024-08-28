@@ -1,12 +1,20 @@
-// import React from 'react';
-import NotesHeader from './NotesHeader';
-import NotesAppBody from './NotesAppBody';
-
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from '../HomePage';
+import AddPage from '../AddPage';
+import DetailPageWrapper from '../DetailPage';
+ 
 function NotesApp() {
  return (
    <div className="notes-app">
-     <NotesHeader/>
-     <NotesAppBody />
+     <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/add" element={<AddPage />} />
+          <Route path="/notes/:id" element={<DetailPageWrapper />} />
+
+        </Routes>
+      </main>
    </div>
  );
 }

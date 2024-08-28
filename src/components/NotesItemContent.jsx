@@ -26,6 +26,6 @@ NotesItemContent.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired
-}
+};
  
 export default NotesItemContent;

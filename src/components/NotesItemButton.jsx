@@ -13,5 +13,5 @@ function NotesItemButton({ id, onDelete }) {
 NotesItemButton.propTypes = {
   id : PropTypes.number.isRequired,
   onDelete : PropTypes.func.isRequired,
-}
+};
 export default NotesItemButton;

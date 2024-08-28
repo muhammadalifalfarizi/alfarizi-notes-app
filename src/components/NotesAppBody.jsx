@@ -1,13 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NotesList from './NotesList';
-import { getData } from '../utils/data';
+import { getNotes } from '../utils/data';
 import NotesInput from './NotesInput';
 
 class NotesAppBody extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
-     notes: getData(),
+     notes: getNotes(),
    }
  
    this.onDeleteHandler = this.onDeleteHandler.bind(this);
@@ -18,7 +19,7 @@ class NotesAppBody extends React.Component {
    const notes = this.state.notes.filter(note => note.id !== id);
    this.setState({ notes });
  }
- onAddNotesHandler({ title, body }) {
+ onAddNotesHandler({ title, body, }) {
    this.setState((prevState) => {
      return {
        notes: [
@@ -33,10 +34,6 @@ class NotesAppBody extends React.Component {
        ]
      }
    });
- }
-
- onSearchHandler(event){
-  this.setState({ searchquery: event.target.value}); // Update search query
  }
 
  render() {
